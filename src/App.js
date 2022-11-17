@@ -1,15 +1,18 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Quote from "./components/Quote";
+import { Suspense } from "react";
 
 function App() {
   return (
     <div className="App">
       <div>
         <h1>React Query</h1>
-        <Quote></Quote>
-        <Quote></Quote>
-        <Quote></Quote>
+        <Suspense fallback={<p>Loading..</p>}>
+          <Quote></Quote>
+          <Quote></Quote>
+          <Quote></Quote>
+        </Suspense>
       </div>
     </div>
   );
